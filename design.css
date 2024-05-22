@@ -367,10 +367,34 @@ a:hover {
   width: max-content;
 }
 
+.text-title-mobile {
+  justify-content: center;
+  font-size: 175px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000000;
+  white-space: nowrap;
+  visibility: hidden;
+}
+
 @media (max-width: 600px) {
   .text-title {
+    visibility: hidden;
+  }
+
+  .text-title-mobile {
     justify-content: center;
-    font-size: 55px;
+    font-size: 90px;
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    white-space: nowrap;
+    visibility: visible;
   }
 
   .proj-txt {
