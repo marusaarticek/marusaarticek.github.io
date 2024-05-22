@@ -390,7 +390,7 @@ a:hover {
   #special-section {
     background-repeat: no-repeat;
     background-size: cover;
-    height: 710px;
+    height: 100vh;
     background-position-x: 20%;
   }
 
