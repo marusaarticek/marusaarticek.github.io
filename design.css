@@ -31,11 +31,11 @@
 }
 
 .main-button {
-background-color: "#252525";
-color: white;
+background-color: "#252525" !importaint;
+color: white !importaint;
   &:hover {
-  color: white;
-    background-color: #181818;
+  color: white !importaint;
+    background-color: #181818 !importaint;
   }
 }
 
