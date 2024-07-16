@@ -30,6 +30,15 @@
   font-style: normal;
 }
 
+.main-button {
+background-color: "#252525";
+color: white;
+  &:hover {
+  color: white;
+    background-color: #181818;
+  }
+}
+
 .gothic-a1-extrabold {
   font-family: "Gothic A1", sans-serif;
   font-weight: 800;
