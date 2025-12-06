@@ -1,6 +1,22 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.164/build/three.module.js";
 
 // --------------------------------------------------
+// DEVICE / PERFORMANCE FLAGS
+// --------------------------------------------------
+
+// Basic heuristic: small screen or coarse pointer => treat as mobile
+const IS_MOBILE = window.matchMedia(
+  "(max-width: 768px), (pointer: coarse)"
+).matches;
+
+// You can tweak these to taste
+const MOBILE_BUBBLE_COUNT = 60;
+const DESKTOP_BUBBLE_COUNT = 160;
+
+const MOBILE_SEGMENTS = 16;   // sphere segments on mobile
+const DESKTOP_SEGMENTS = 64;  // sphere segments on desktop
+
+// --------------------------------------------------
 // SCENE SETUP
 // --------------------------------------------------
 
@@ -17,12 +33,22 @@ camera.position.z = 24;
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.getElementById("webgl"),
-  antialias: true,
+  antialias: !IS_MOBILE, // skip antialias on mobile for a bit more speed
   alpha: true
 });
+
 renderer.setSize(container.clientWidth, container.clientHeight);
-renderer.setPixelRatio(window.devicePixelRatio || 1);
-renderer.shadowMap.enabled = true;
+
+// cap pixel ratio on mobile so GPUs don’t die at 3x scale
+const maxMobilePixelRatio = 1.5;
+renderer.setPixelRatio(
+  IS_MOBILE
+    ? Math.min(maxMobilePixelRatio, window.devicePixelRatio || 1)
+    : window.devicePixelRatio || 1
+);
+
+// shadows are expensive – disable them on mobile
+renderer.shadowMap.enabled = !IS_MOBILE;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
 // Better lighting for glass
@@ -39,20 +65,12 @@ scene.add(ambientLight);
 
 const spotLight = new THREE.SpotLight(0xffffff, 4.6);
 spotLight.position.set(5, 15, 21);
-spotLight.castShadow = true;
+spotLight.castShadow = !IS_MOBILE; // no shadows on mobile
 scene.add(spotLight);
 
 const directionalLight1 = new THREE.DirectionalLight(0xffffff, 0.3);
 directionalLight1.position.set(0, -4, 0);
 scene.add(directionalLight1);
-
-
-
-// --------------------------------------------------
-//fluid
-// --------------------------------------------------
-
- 
 
 // --------------------------------------------------
 // GLASS MATERIAL
@@ -61,27 +79,12 @@ scene.add(directionalLight1);
 const material = new THREE.MeshPhysicalMaterial({
   // base glass
   color: 0x6b6b6b,
-  metalness: 0.6,
-  roughness: 0.02,
-  transmission: 1.0, 
+  metalness: 0.6, 
+  transmission: 1.0,
   transparent: true,
-  opacity: 1.0,
-  thickness: 1.8,
-  ior:4.45,
-
-  // reflections
-  envMapIntensity: 16.0,
-  clearcoat: 1.0,
-  clearcoatRoughness: 0.02,
- 
-  iridescence: 1.0,                // 0–1, strength of iridescence
-  iridescenceIOR: 1.9,             // index of refraction for the film
-  iridescenceThicknessRange: [100, 400] // nm; controls rainbow banding
+  opacity: 1.0, 
+  clearcoat: 1.0, 
 });
-
-
-
-
 
 // --------------------------------------------------
 // BUBBLE GENERATION SYSTEM
@@ -91,7 +94,8 @@ const spheres = [];
 const group = new THREE.Group();
 scene.add(group);
 
-const BUBBLE_COUNT = 160;
+// use lower bubble count on mobile
+const BUBBLE_COUNT = IS_MOBILE ? MOBILE_BUBBLE_COUNT : DESKTOP_BUBBLE_COUNT;
 const MIN_RADIUS = 0.4;
 const MAX_RADIUS = 1.8;
 
@@ -101,7 +105,10 @@ function rand(min, max) {
 
 function generateBubbles() {
   // Remove old
-  spheres.forEach((s) => group.remove(s));
+  spheres.forEach((s) => {
+    s.geometry.dispose();
+    group.remove(s);
+  });
   spheres.length = 0;
 
   const w = container.clientWidth;
@@ -118,12 +125,20 @@ function generateBubbles() {
       z: rand(-3, 3)
     };
 
-    const geometry = new THREE.SphereGeometry(radius, 64, 64);
+    // lower segment count on mobile to reduce geometry cost
+    const widthSegments = IS_MOBILE ? MOBILE_SEGMENTS : DESKTOP_SEGMENTS;
+    const heightSegments = IS_MOBILE ? MOBILE_SEGMENTS : DESKTOP_SEGMENTS;
+
+    const geometry = new THREE.SphereGeometry(
+      radius,
+      widthSegments,
+      heightSegments
+    );
     const sphere = new THREE.Mesh(geometry, material);
 
     sphere.position.set(pos.x, pos.y, pos.z);
-    sphere.castShadow = true;
-    sphere.receiveShadow = true;
+    sphere.castShadow = !IS_MOBILE;
+    sphere.receiveShadow = !IS_MOBILE;
 
     sphere.userData = {
       originalPosition: { ...pos },
@@ -146,6 +161,8 @@ const mouse = new THREE.Vector2();
 const tempVector = new THREE.Vector3();
 const forces = new Map();
 
+// On mobile the pointer may be touch; you can also attach to "pointermove"
+// For simplicity we keep mousemove – mobile browsers synthesize mouse events
 function onMouseMove(event) {
   const rect = container.getBoundingClientRect();
 
@@ -203,9 +220,12 @@ function handleCollisions() {
 
 const breathingAmplitude = 0.1;
 const breathingSpeed = 0.002;
+let frameIndex = 0;
 
 function animate() {
   requestAnimationFrame(animate);
+
+  frameIndex++;
 
   const t = Date.now() * breathingSpeed;
 
@@ -229,7 +249,11 @@ function animate() {
     sphere.position.lerp(tempVector, 0.02);
   });
 
-  handleCollisions();
+  // On mobile, run collisions every 2nd frame to cut cost ~in half
+  if (!IS_MOBILE || frameIndex % 2 === 0) {
+    handleCollisions();
+  }
+
   renderer.render(scene, camera);
 }
 
@@ -250,4 +274,3 @@ window.addEventListener("resize", () => {
 
   generateBubbles();
 });
-
