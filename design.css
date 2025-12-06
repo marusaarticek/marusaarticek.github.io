@@ -32,7 +32,7 @@ html, body {
 
 
 #bubble-container {
-  position: relative;  
+  position: absolute;  
   left: 50%;
   transform: translate(-50%, -50%);
   width: 93%;
@@ -79,9 +79,9 @@ html, body {
 .text-bottom {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 
@@ -455,6 +455,21 @@ a:hover {
 
 @media (max-width: 600px) {
 
+  .bottom-elements {
+    position: absolute;
+    bottom: 2%;
+    display: flex;
+    right: 3.4%;
+    width: 67%;
+    text-align: end;
+  }
+
+.text-title {
+  font-size: 15cqw; 
+  bottom: 18%;   
+}
+
+  /* front page end  */
 
   .proj-txt {
     display: flex;

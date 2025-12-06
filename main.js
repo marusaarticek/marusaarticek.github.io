@@ -8,12 +8,11 @@ import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.164/build/three.mod
 const IS_MOBILE = window.matchMedia(
   "(max-width: 768px), (pointer: coarse)"
 ).matches;
-
-// You can tweak these to taste
-const MOBILE_BUBBLE_COUNT = 60;
+ 
+const MOBILE_BUBBLE_COUNT = 100;
 const DESKTOP_BUBBLE_COUNT = 160;
 
-const MOBILE_SEGMENTS = 16;   // sphere segments on mobile
+const MOBILE_SEGMENTS = 36;   // sphere segments on mobile
 const DESKTOP_SEGMENTS = 64;  // sphere segments on desktop
 
 // --------------------------------------------------
