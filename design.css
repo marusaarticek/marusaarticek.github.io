@@ -37,15 +37,16 @@ html, body {
   transform: translate(-50%, -50%);
   width: 93%;
   height: 66%;
-  top: 40%;
-  background-color: #a1a1a1;
-  border-radius: 12px;
+  top: 40%;  
+  background-color: #c6c6c6;
+  border-radius: 14px;
 }
 
 
 .webgl {
   width: -webkit-fill-available;
   height:  -webkit-fill-available ;
+  border-radius: 14px;
 }
 
 .nav-link {
@@ -347,6 +348,14 @@ body {
 
 .p-bot-break {
   padding-bottom: 100px;
+  background-color: white;
+}
+
+
+
+.centerflex {
+  display: flex;
+  justify-content: center;
 }
 
 .project-h {
@@ -513,4 +522,75 @@ a:hover {
   background-size: cover;
   height: 80vh; 
   background-color: #b0ff39;
+}
+
+
+
+
+
+
+#demo {
+  text-align: right;
+  white-space: pre-wrap;
+}
+
+
+
+
+/* ----------------------------- */
+
+
+
+
+
+
+
+.page-wrapper {  
+  padding: 40px;
+  background: #ffffff;
+}
+
+.page-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* Image wrapper (keeps 16:9 aspect ratio) */
+.project-media {
+  position: relative;
+  width: 100%;
+  padding-top: 56%;        /* 16:9 */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.project-media img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* ensures image covers area */
+  transition: transform 0.4s ease;
+  display: block;   
+}
+
+.project-media img {
+  will-change: transform;
+}
+
+/* Hover zoom effect */
+.project-media:hover img {
+  transform: scale(1.07);
+}
+
+.project-meta {
+  font-size: 0.75rem;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  margin-top: 2px;
 }
