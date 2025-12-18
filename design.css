@@ -4,7 +4,7 @@
 html, body {
   margin: 0;
   height: 100%;
-  
+  font-family: "Inter Tight", sans-serif;
 }
 
 .MainContainer {
@@ -39,14 +39,14 @@ html, body {
   height: 66%;
   top: 40%;  
   background-color: #c6c6c6;
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 
 .webgl {
   width: -webkit-fill-available;
   height:  -webkit-fill-available ;
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 .nav-link {
@@ -89,7 +89,7 @@ html, body {
 .container-main {   
   bottom: 4%;
   background-color: #4f7fe6;
-  border-radius: 12px;
+  border-radius: 8px;
   max-width: 1800px;
   display: flex;
   justify-content: space-between;
@@ -128,18 +128,17 @@ a {
 }
 
 .container {
-  max-width: 1550px !important;
+  max-width: 1850px !important;
 }
 
 .sec-bg-gray {
-  background-color: #e6e6e6;
+  background-color: #ffffff;
 }
 
 body {
-  background-color: rgb(255, 255, 255);
-  font-family: "Inter", sans-serif;
+  background-color: rgb(255, 255, 255); 
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   color: rgb(0, 0, 0);
 }
 
@@ -231,12 +230,16 @@ body {
   font-size: 17px;
 }
 
-.proj-text-l {
+.proj-text-l { 
   font-family: "Inter", sans-serif;
-  color: rgb(0, 0, 0) !important;
-  font-weight: 400;
-  font-size: 17px;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
 }
+
+ 
+
 
 .a-button {
   display: flex;
@@ -415,11 +418,20 @@ body {
 
 .bottom-elements {
   position: absolute;
-  bottom: 3%; 
-  display: flex; 
+  bottom: 3%;
   right: 3.4%;
-  width: 20%;
-  text-align: end;
+  width: 20%; 
+}
+
+#demo {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  text-align: right;
+}
+#demo.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #d-01 .d-01-i {
@@ -441,7 +453,7 @@ body {
 }
 
 a:hover {
-  color: #0048ff;
+  color: #2a2a2a;
 }
 
 .a-proj {
@@ -461,17 +473,21 @@ a:hover {
   width: max-content;
 }
 
+.navbar {
+  padding-bottom: 0rem;
+}
+
 
 @media (max-width: 600px) {
 
   .bottom-elements {
     position: absolute;
-    bottom: 2%;
-    display: flex;
+    bottom: 2%; 
     right: 3.4%;
-    width: 67%;
-    text-align: end;
+    width: 67%; 
   }
+
+ 
 
 .text-title {
   font-size: 15cqw; 
@@ -525,35 +541,22 @@ a:hover {
 }
 
 
-
-
-
-
-#demo {
-  text-align: right;
-  white-space: pre-wrap;
+a {
+  color: #323232;
+  text-decoration: none;
 }
 
-
-
-
 /* ----------------------------- */
-
-
-
-
-
-
-
+ 
 .page-wrapper {  
   padding: 40px;
   background: #ffffff;
 }
 
 .page-title {
-  font-size: 3.2rem;
-  font-weight: 700;
-  margin-bottom: 40px;
+  font-size: 7.2rem;
+  font-weight: 400;
+  margin-bottom: 80px;
 }
 
 /* Image wrapper (keeps 16:9 aspect ratio) */
@@ -562,7 +565,7 @@ a:hover {
   width: 100%;
   padding-top: 56%;        /* 16:9 */
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 8px;
   margin-bottom: 10px;
 }
 
@@ -587,10 +590,10 @@ a:hover {
 }
 
 .project-meta {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
+  text-transform:uppercase;
 }
 
 .project-title {
-  font-size: 1.3rem;
-  margin-top: 2px;
+  font-size: 2.8rem; 
 }

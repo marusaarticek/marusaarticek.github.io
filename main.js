@@ -201,12 +201,12 @@ function handleCollisions() {
       const rB = B.userData.radius;
 
       const dist = A.position.distanceTo(B.position);
-      const minDist = (rA + rB) * 1.15;
+      const minDist = (rA + rB) * 1.35;
 
       if (dist < minDist) {
         tempVector.subVectors(B.position, A.position).normalize();
 
-        const push = (minDist - dist) * 0.5;
+        const push = (minDist - dist) * 0.7;
         A.position.addScaledVector(tempVector, -push);
         B.position.addScaledVector(tempVector, push);
       }
