@@ -53,11 +53,12 @@ html, body {
   font-size: 18px;
 }
 .main-button {
-  background-color: "#252525" !important;
-  color: white !important;
+  background-color: #ffffff00 !important;
+  color: rgb(17, 17, 17) !important;
+  border: 1.6px solid black;
   &:hover {
   color: white !important;
-    background-color: #131313 !important;
+    background-color: #080808 !important;
   }
 }
 
@@ -134,6 +135,7 @@ a {
 .sec-bg-gray {
   background-color: #ffffff;
 }
+
 
 body {
   background-color: rgb(255, 255, 255); 
@@ -364,9 +366,9 @@ body {
 .project-h {
   display: flex;
   justify-content: center;
-  font-size: 120px;
+  font-size: 100px;
   font-family: "Gothic A1", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-style: normal;
   letter-spacing: -4px;
   line-height: 0.8;
@@ -441,7 +443,7 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
   left: 10%;
-  z-index: -2;
+  z-index: 22;
 }
 
 #d-01:hover .d-01-i {
@@ -555,8 +557,7 @@ a {
 
 .page-title {
   font-size: 7.2rem;
-  font-weight: 400;
-  margin-bottom: 80px;
+  font-weight: 400; 
 }
 
 /* Image wrapper (keeps 16:9 aspect ratio) */
