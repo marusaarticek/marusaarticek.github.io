@@ -201,7 +201,7 @@ function handleCollisions() {
       const rB = B.userData.radius;
 
       const dist = A.position.distanceTo(B.position);
-      const minDist = (rA + rB) * 1.35;
+      const minDist = (rA + rB) * 1.5;
 
       if (dist < minDist) {
         tempVector.subVectors(B.position, A.position).normalize();
