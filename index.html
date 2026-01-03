@@ -35,12 +35,13 @@
           <section class="hero container-fluid">
 
           <header class="site-header d-flex justify-content-between align-items-center">
-              <div>Maruša Artiček</div>
+              <div class="proj-text-l" >Maruša Artiček</div>
               <!--<div class="fw-light">design</div>  -->
-              <nav>
-                <a href="#">Work</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+              <nav class="proj-text-l">
+                <a href="#who">About</a>
+                <a href="#projects">Work</a>
+                <a href="#contact">Contact</a>
+                
               </nav>
             </header>
       
@@ -63,64 +64,6 @@
         </section>
       </div>
 
-
-    <!-- <div class="MainContainer">
-      <div class="ParallaxContainer">
-         
-        <section id="special-section" class=""> 
-          <div id="bubble-container">
-            <canvas class="webgl" id="webgl"></canvas>
-          </div>  
-          <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-              <a
-                class="navbar-brand p-1 pf-inter-t text-uppercase"
-                href="index.html"
-                >Marusa Articek</a
-              >
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div
-                class="collapse navbar-collapse justify-content-end"
-                id="navbarNav"
-              >
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link c-black pe-3" href="#who"
-                      >ABOUT</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link  c-black pe-3" href="#projects"
-                      >PROJECTS</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link c-black pe-3" href="#contact"
-                      >CONTACT</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav> 
-          <div class="inter-tight-600 text-title">MA-DESIGN</div>
-          <div class="bottom-elements">
-            <div id="demo" class="bottom-element text-bottom">
-            </div>
-          </div> 
-        </section>
-      </div>
-   -->
       <div class="ContentContainer container2">
         <section id="who" class="container  pad-sec2">
           <div class="row mt-5 mb-5">
@@ -129,7 +72,7 @@
             <div class="col-md-6">
               <h2 class="mt-5 ps-5">Who</h2>
               <p class="proj-text-l pe-5 ps-5">
-                Hey there. I'm Maruša, a UI / UX designer with a passion for
+                Hey there. My Name is Maruša, and I'm a UI / UX designer with a passion for
                 bringing my own designs to life. This is a showcase of my
                 professional and personal work.
               </p>
@@ -143,15 +86,15 @@
       <!-- projects --><!-- projects --><!-- projects -->
 
 
-      <div class="page-wrapper">
-        <h1 class="page-title mb-3">Selected Projects</h1>
+      <div class="page-wrapper pt-5">
+        <h1 class="page-title mb-5 p-top-break" id="projects">Selected Projects</h1>
     
         <div class="row g-5">
 
           <div class="col-md-6">
             <a href="aptFit.html" class="project-link">
               <div class="project-media">
-                <img src="assets/projects-bg/aprfitcover.png" alt="">
+                <img src="assets/projects-bg/bg-aptfit.png" alt="">
               </div>
               <div class="project-meta">UX & UI Design</div>
               <div class="project-title">AptFit App </div>
@@ -198,9 +141,9 @@
  <!-- older projects -->
 
 
- <div class="page-wrapper">
+ <div class="page-wrapper pt-5">
   
-  <section id="projects" class="p-bot-break">
+  <section id="projects" class="p-bot-break p-top-break">
     <h1 class="page-title">Older & Other Work</h1>
     <div class="container proj-text p-5">
        <div id="d-01" class="row n-bor t-bor">
@@ -328,8 +271,12 @@
       <footer class="footer">
         <div class="footer-text"> 
           <div class="hero-title-bot">GET IN TOUCH</div>
-          <div class="footer-email "> 
+          <div class="footer-email" id="contact"> 
             <p>articek.marusa@gmail.com</p> 
+            <a class="linkedin" href="https://www.linkedin.com/in/marusa-articek/">
+              LINKEDIN
+              <img src="assets/icons/Arrow-28-w.svg" width="20" alt="" />
+            </a>
           </div>
         </div>
       

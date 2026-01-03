@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MADesign</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favi.svg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="design.css" />
+ 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/"
+        }
+      }
+      </script>
+ 
+  </head>
+ 
+  <body class="">
+    <script class="sceene-window" type="module" src="/main.js"></script>  
+    <div class="MainContainer">
+      <div class="ParallaxContainer">
+         
+        <section id="special-section" class=""> 
+          <div id="bubble-container">
+            <canvas class="webgl" id="webgl"></canvas>
+            <canvas id="bg-canvas"></canvas>
+          </div>  
+          <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a
+                class="navbar-brand p-1 pf-inter-t text-uppercase"
+                href="index.html"
+                >Portfolio</a
+              >
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                class="collapse navbar-collapse justify-content-end"
+                id="navbarNav"
+              >
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link c-black pe-3 inter-400" href="#who"
+                      >ABOUT</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  c-black pe-3" href="#projects"
+                      >PROJECTS</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link c-black pe-3" href="#contact"
+                      >CONTACT</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav> 
+          <div class="inter-tight-600 text-title">MA-DESIGN</div>
+          <div class="bottom-elements">
+            <div id="demo" class="bottom-element text-bottom">
+            </div>
+          </div> 
+        </section>
+      </div>
+  
+      <div class="ContentContainer container2">
+        <section id="who" class="container  pad-sec2">
+          <div class="row mt-5 mb-5">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+              <h2 class="mt-5 ps-5">Who</h2>
+              <p class="proj-text-l pe-5 ps-5">
+                Hey there. I'm Maruša, a UI / UX designer with a passion for
+                bringing my own designs to life. This is a showcase of my
+                professional and personal work.
+              </p>
+            </div>
+          </div>
+        </section>
+    </div>
+</div>

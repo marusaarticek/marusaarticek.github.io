@@ -717,6 +717,12 @@ a {
   text-decoration: none;
 }
 
+.linkedin {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
 /* ----------------------------- */
  
 .page-wrapper {  
@@ -765,5 +771,15 @@ a {
 }
 
 .project-title {
-  font-size: 2.8rem; 
+  font-size: 2.0rem; 
+}
+
+.proj-desc {
+width: 100%;
+max-width: 66rem;
+margin-left: auto; margin-right: auto;
+}
+
+p {
+  font-weight: 300; 
 }
