@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MA</title>
-
+    <title>MADesign</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/square-blue.svg" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,33 +20,30 @@
   </head>
 
   <body>
-    <section class="sec-bg">
-      <div class="n-bor">
-        <div class="">
-          <div class="p-2 flex-j-s">
-            <a href="index.html" class="p-2 bd-highlight nav-items">
-              <img src="Star 27(1).svg" alt="" />
-            </a>
-            <a href="index.html" class="bd-highlight nav-items">Portfolio</a>
-            <!-- <a href="about.html" class="bd-highlight nav-items pe-3">ABOUT</a> -->
-            <a href="#projects" class="p-2 bd-highlight nav-items">Projects</a>
-          </div>
-        </div>
-      </div>
+    <section class="sec-bg-gray">
+      <header class="site-header d-flex justify-content-between align-items-center">
+        <div class="proj-text-l">  <a href="index.html">Portfolio</a></div>
+        <!--<div class="fw-light">design</div>  -->
+        <nav class="proj-text-l">
+          <a href="index.html#who">About</a>
+          <a href="index.html#projects">Work</a>
+          <a href="#contact">Contact</a>
+          
+        </nav>
+      </header>
 
       <div class="project-h">Meditation Master</div>
       <section class="container pb-5">
         <div class="row mb-5">
           <div class="col-md-3"></div>
           <div class="col-md-6 text-center">
-            <p class="desc-t mt-2">Brand Identity - UI / UX Design</p>
+            <p class="f-w-600">[ Brand Identity - UI / UX Design ]</p>
 
-            <p class="pt-3 pb-5">
+            <p class="pt-1 pb-5 f-s-17">
               Meditation Master provides an immersive guided mindfulness
               experience through its user-friendly meditation practice
               interface.
             </p>
-            <img src="star-red.svg" alt="" />
           </div>
           <div class="col-md-3"></div>
         </div>
@@ -60,10 +57,24 @@
       <div class="bor-mid">ssss</div>
     </section> -->
 
-    <section class="mt-5 p-bot-break">
+    <section class="mt-5 p-bot-break text-center">
       <div class="container">
-        <img src="meditationM.png" class="img-fluid" alt="Your Image" />
+        <img src="meditationM.png" class="img-fluid" />
       </div>
     </section>
+
+    <footer class="footer">
+      <div class="footer-text"> 
+        <div class="hero-title-bot">GET IN TOUCH</div>
+        <div class="footer-email" id="contact"> 
+          <p>articek.marusa@gmail.com</p> 
+          <a class="linkedin" href="https://www.linkedin.com/in/marusa-articek/">
+            LINKEDIN
+            <img src="assets/icons/Arrow-28-w.svg" width="20" alt="" />
+          </a>
+        </div>
+      </div> 
+      <img src="flow 1.png" alt="Flower" class="footer-image" />
+    </footer>
   </body>
 </html>
