@@ -409,7 +409,9 @@ body {
   font-size: 16px;
 }
 
- 
+.pad-5 {
+  padding: 3rem!important;
+  }
 
 
 .a-button {
@@ -649,58 +651,6 @@ a:hover {
 }
 
 
-@media (max-width: 600px) {
-
-  .bottom-elements {
-    position: absolute;
-    bottom: 2%; 
-    right: 3.4%;
-    width: 67%; 
-  }
-
- 
-
-.text-title {
-  font-size: 15cqw; 
-  bottom: 18%;   
-}
-
-  /* front page end  */
-
-  .proj-txt {
-    display: flex;
-    justify-content: start;
-    font-size: 40px;
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
-    margin-top: 70px;
-    padding-bottom: 20px;
-  }
-
-  .proj-text {
-    font-size: 14px;
-  }
-
-  #special-section {
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    background-position-x: 20%;
-  }
-
-  .text-contact {
-    font-size: 45px;
-  }
-
-  .project-h {
-    font-size: 74px;
-  }
-
-  .img-fluid-70 {
-    max-width: 100%;
-    height: auto;
-  }
-}
 
 
 /* ----------------------------- */
@@ -726,8 +676,9 @@ a {
 /* ----------------------------- */
  
 .page-wrapper {  
-  padding: 40px;
+  padding: 20px;
   background: #ffffff;
+   
 }
 
 .page-title {
@@ -782,4 +733,106 @@ margin-left: auto; margin-right: auto;
 
 p {
   font-weight: 300; 
+}
+
+
+
+@media (max-width: 600px) {
+
+  .bottom-elements {
+    position: absolute;
+    bottom: 2%; 
+    right: 3.4%;
+    width: 67%; 
+  }
+ 
+  .text-title {
+    font-size: 15cqw; 
+    bottom: 18%;   
+  }
+
+  /* front page end  */
+
+  .proj-txt {
+    display: flex;
+    justify-content: start;
+    font-size: 40px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    margin-top: 70px;
+    padding-bottom: 20px;
+  }
+
+  .proj-text {
+    font-size: 14px;
+  }
+
+  #special-section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-position-x: 20%;
+  }
+
+  .text-contact {
+    font-size: 45px;
+  }
+
+  .project-h {
+    font-size: 74px;
+  }
+
+  .img-fluid-70 {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hero-description { 
+    bottom: 14%; 
+    }
+
+  .page-title {
+    font-size: 4rem; 
+  }
+
+  .footer {
+    position: relative;
+    height: 45vh;
+    background: #111;
+    overflow: hidden;
+    }
+
+  .footer-email { 
+    bottom: unset;
+    right: 5%;  
+    font-size: 1.5rem;
+  }
+
+  .site-header a {
+    margin-left: 0.4rem;
+    }
+
+  .site-header {
+    padding: 0.5rem 0.1rem;
+    font-size: 0.95rem;
+    }
+    
+  .hero { 
+    min-height: 90vh; 
+  }
+
+  .ParallaxContainer { 
+    height: 90vh; 
+  }
+
+  .scroll-indicator { 
+    bottom: 3rem; 
+    }
+
+  .d-01-i {
+    display: none;
+  }
+  .pad-5 {
+    padding: 1rem!important;
+    }
 }
